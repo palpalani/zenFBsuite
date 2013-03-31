@@ -8,9 +8,9 @@ Code Implementation - Micheal Luttrull (micheall)
 
 Installation
 ============
-1) Upload the zenFBSuite.php to your zenphotodir/plugins folder.
-2) Enter options via admin backend.
-3) Edit theme files to insert appropriate calls where you would like the template functions to appear.
+1) Upload the zenFBSuite.php to your zenphotodir/plugins folder.<Br />
+2) Enter options via admin backend.<br />
+3) Edit theme files to insert appropriate calls where you would like the template functions to appear.<br />
 
 Developer Note
 ==============
