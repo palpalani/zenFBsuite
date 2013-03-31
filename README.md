@@ -44,3 +44,7 @@ to create your Facebook application, please vist:
 
 http://inthemdl.net/news/creating-your-facebook-app_id
 
+Demonstration
+=============
+To see these plugins on a demonstration page, please either peruse this site, or visit this link.
+
