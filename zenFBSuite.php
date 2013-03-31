@@ -9,7 +9,7 @@ Code Implementation - Micheal Luttrull (micheall)
 */
 
 $plugin_is_filter = 5|THEME_PLUGIN;
-$plugin_description = gettext_pl("zenFBSuite is a plugin to implement the Facebook social plugins into your Zenphoto powered CMS/Gallery.");
+$plugin_description = gettext("zenFBSuite is a plugin to implement the Facebook social plugins into your Zenphoto powered CMS/Gallery.");
 $plugin_author      = "Micheal Luttrull (micheall)";
 $plugin_version     = "1.4.4.3";
 $plugin_URL         = "http://inthemdl.net/pages/zenfb-suite";
@@ -33,10 +33,6 @@ class zenFBSuiteOptions {
 								setOptionDefault('zenFBcommon_adminid', 'micheall');
 								setOptionDefault('zenFBcommon_defaultlogo', NULL);
 								setOptionDefault('zenFBcommon_siteroot', NULL);
-								
-								//zenFBSend
-								setOptionDefault('zenFBSend_font', 0);
-								setOptionDefault('zenFBSend_scheme', 0);
 								
 								//zenFBActivity
 								setOptionDefault('zenFBActivity_showheader', 0);
@@ -75,319 +71,323 @@ class zenFBSuiteOptions {
 								setOptionDefault('zenFBRecommend_height', '300');
 								setOptionDefault('zenFBRecommend_linktarget', '_blank');
 								setOptionDefault('zenFBRecommend_bordercolor', NULL);
+								
+								//zenFBSend
+								setOptionDefault('zenFBSend_font', 0);
+								setOptionDefault('zenFBSend_scheme', 0);
 				}
 				
 				function getOptionsSupported() {
 								//zenFBCommonets Checkboxes
 								$checkboxes = array(
-												gettext_pl('Albums') => 'zenFBComments_albums',
-												gettext_pl('Images') => 'zenFBComments_images'
+												gettext('Albums') => 'zenFBComments_albums',
+												gettext('Images') => 'zenFBComments_images'
 								);
 								if (getOption('zp_plugin_zenpage')) {
 												$checkboxes = array_merge($checkboxes, array(
-																gettext_pl('Pages') => 'zenFBComments_pages',
-																gettext_pl('News') => 'zenFBComments_articles'
+																gettext('Pages') => 'zenFBComments_pages',
+																gettext('News') => 'zenFBComments_articles'
 												));
 								}
 								return array(
 												//zenFBcommon Options
-												gettext_pl('Application ID') => array(
+												gettext('Application ID') => array(
 																'key' => 'zenFBcommon_appid',
 																'type' => 0,
 																'order' => 0,
-																'desc' => gettext_pl('Enter <em>YOUR</em> Application ID from facebook here. For more information please visit <a href="http://inthemdl.net/news/creating-your-facebook-app_id">this page</a>.<br />
+																'desc' => gettext('Enter <em>YOUR</em> Application ID from facebook here. For more information please visit <a href="http://inthemdl.net/news/creating-your-facebook-app_id">this page</a>.<br />
 								  You should be entering numbers only in this field.')
 												),
-												gettext_pl('Admin ID/User ID') => array(
+												gettext('Admin ID/User ID') => array(
 																'key' => 'zenFBcommon_adminid',
 																'type' => 0,
 																'order' => 1,
-																'desc' => gettext_pl('Enter <em>YOUR</em> User ID from facebook here. For more information please visit <a href="http://inthemdl.net/news/finding-your-facebook-userid">this page</a>.<br />
+																'desc' => gettext('Enter <em>YOUR</em> User ID from facebook here. For more information please visit <a href="http://inthemdl.net/news/finding-your-facebook-userid">this page</a>.<br />
 								  Enter your Facebook User ID # or vanity name here.<br />
 								  <em><b>Please note:  If you do not change your admin ID, I will have the ability to manage your comments, etc. So change it.</b></em><br />
 								  For multiple admins, enter a comma separated list (can be #s or name); i.e.  \'1273267113, micheall, myfacebooknamerocks\'')
 												),
-												gettext_pl('Default Logo URL') => array(
+												gettext('Default Logo URL') => array(
 																'key' => 'zenFBcommon_defaultlogo',
 																'type' => 0,
 																'order' => 2,
-																'desc' => gettext_pl('If zenphoto does not have a current image/object thumbnail do you want to display a default logo? Enter a valid URL link to the image you would like to use.  If nothing entered, and no current object/image thumbnail available, Facebook wall posts will not display an image. If an invalid URL is used it will display a broken link to an image.')
+																'desc' => gettext('If zenphoto does not have a current image/object thumbnail do you want to display a default logo? Enter a valid URL link to the image you would like to use.  If nothing entered, and no current object/image thumbnail available, Facebook wall posts will not display an image. If an invalid URL is used it will display a broken link to an image.')
 												),
-												gettext_pl('Site Root Install Location') => array(
+												gettext('Site Root Install Location') => array(
 																'key' => 'zenFBcommon_siteroot',
 																'type' => 0,
 																'order' => 3,
-																'desc' => gettext_pl('Enter the url (including http://) to the root fo your Zenphoto installation.')
+																'desc' => gettext('Enter the url (including http://) to the root fo your Zenphoto installation.')
 												),
 												//zenFBSend Options
-												gettext_pl('Font') => array(
+												gettext('Font') => array(
 																'key' => 'zenFBSend_font',
 																'type' => 5,
 																'order' => 4,
 																'selections' => array(
-																				gettext_pl('Default') => 0,
-																				gettext_pl('Arial') => 1,
-																				gettext_pl('Lucida Grande') => 2,
-																				gettext_pl('Segoe UI') => 3,
-																				gettext_pl('Tahoma') => 4,
-																				gettext_pl('Trebuche MS') => 5,
-																				gettext_pl('Verdana') => 6
+																				gettext('Default') => 0,
+																				gettext('Arial') => 1,
+																				gettext('Lucida Grande') => 2,
+																				gettext('Segoe UI') => 3,
+																				gettext('Tahoma') => 4,
+																				gettext('Trebuche MS') => 5,
+																				gettext('Verdana') => 6
 																),
-																'desc' => gettext_pl('Which font do you want to use?')
+																'desc' => gettext('Which font do you want to use?')
 												),
-												gettext_pl('Color Scheme') => array(
+												gettext('Color Scheme') => array(
 																'key' => 'zenFBSend_scheme',
 																'type' => 5,
 																'order' => 5,
 																'selections' => array(
-																				gettext_pl('Light') => 0,
-																				gettext_pl('Dark') => 1
+																				gettext('Light') => 0,
+																				gettext('Dark') => 1
 																),
-																'desc' => gettext_pl('Simple Light or Dark color scheme selection.')
+																'desc' => gettext('Simple Light or Dark color scheme selection.')
 												),
 												//zenFBActivity Options
-												gettext_pl('Hide Header?') => array(
+												gettext('Hide Header?') => array(
 																'key' => 'zenFBActivity_showheader',
 																'type' => 5,
 																'order' => 6,
 																'selections' => array(
-																				gettext_pl('No') => 0,
-																				gettext_pl('Yes') => 1
+																				gettext('No') => 0,
+																				gettext('Yes') => 1
 																),
-																'desc' => gettext_pl('Do you want to hide the "Recent Activity" header in your box?')
+																'desc' => gettext('Do you want to hide the "Recent Activity" header in your box?')
 												),
-												gettext_pl('Show Recommendations?') => array(
+												gettext('Show Recommendations?') => array(
 																'key' => 'zenFBActivity_recommends',
 																'type' => 5,
 																'order' => 7,
 																'selections' => array(
-																				gettext_pl('No') => 0,
-																				gettext_pl('Yes') => 1
+																				gettext('No') => 0,
+																				gettext('Yes') => 1
 																),
-																'desc' => gettext_pl('Enabling this will split your activity box in half with recent activity and recommendations by default. Leaving this set to no will still populate empty space in the box with recommendations.')
+																'desc' => gettext('Enabling this will split your activity box in half with recent activity and recommendations by default. Leaving this set to no will still populate empty space in the box with recommendations.')
 												),
-												gettext_pl('Font') => array(
+												gettext('Font') => array(
 																'key' => 'zenFBActivity_font',
 																'type' => 5,
 																'order' => 8,
 																'selections' => array(
-																				gettext_pl('Default') => 0,
-																				gettext_pl('Arial') => 1,
-																				gettext_pl('Lucida Grande') => 2,
-																				gettext_pl('Segoe UI') => 3,
-																				gettext_pl('Tahoma') => 4,
-																				gettext_pl('Trebuche MS') => 5,
-																				gettext_pl('Verdana') => 6
+																				gettext('Default') => 0,
+																				gettext('Arial') => 1,
+																				gettext('Lucida Grande') => 2,
+																				gettext('Segoe UI') => 3,
+																				gettext('Tahoma') => 4,
+																				gettext('Trebuche MS') => 5,
+																				gettext('Verdana') => 6
 																),
-																'desc' => gettext_pl('Which font do you want to use?')
+																'desc' => gettext('Which font do you want to use?')
 												),
-												gettext_pl('Color Scheme') => array(
+												gettext('Color Scheme') => array(
 																'key' => 'zenFBActivity_scheme',
 																'type' => 5,
 																'order' => 9,
 																'selections' => array(
-																				gettext_pl('Light') => 0,
-																				gettext_pl('Dark') => 1
+																				gettext('Light') => 0,
+																				gettext('Dark') => 1
 																),
-																'desc' => gettext_pl('Simple Light or Dark color scheme selection.')
+																'desc' => gettext('Simple Light or Dark color scheme selection.')
 												),
-												gettext_pl('Width') => array(
+												gettext('Width') => array(
 																'key' => 'zenFBActivity_width',
 																'type' => 0,
 																'order' => 10,
-																'desc' => gettext_pl('Width to display recommend box. Defaults to 300 pixels. (numbers only)')
+																'desc' => gettext('Width to display recommend box. Defaults to 300 pixels. (numbers only)')
 												),
-												gettext_pl('Height') => array(
+												gettext('Height') => array(
 																'key' => 'zenFBActivity_height',
 																'type' => 0,
 																'order' => 11,
-																'desc' => gettext_pl('Height to display recommend box. Defaults to 300 pixels. (numbers only)')
+																'desc' => gettext('Height to display recommend box. Defaults to 300 pixels. (numbers only)')
 												),
-												gettext_pl('Border Color') => array(
+												gettext('Border Color') => array(
 																'key' => 'zenFBActivity_bordercolor',
 																'type' => 0,
 																'order' => 12,
-																'desc' => gettext_pl('What color do you want the border to be? Can be RGB hastags (#FF33FF) or Color Words (white, pink, black, gray, etc).')
+																'desc' => gettext('What color do you want the border to be? Can be RGB hastags (#FF33FF) or Color Words (white, pink, black, gray, etc).')
 												),												
-												gettext_pl('Link Target') => array(
+												gettext('Link Target') => array(
 																'key' => 'zenFBActivity_linktarget',
 																'type' => 5,
 																'order' => 13,
 																'selections' => array(
-																				gettext_pl('_blank') => 0,
-																				gettext_pl('_top') => 1,
-																				gettext_pl('_parent') => 2,
+																				gettext('_blank') => 0,
+																				gettext('_top') => 1,
+																				gettext('_parent') => 2,
 																),
-																'desc' => gettext_pl('Where do you want links to target?')
+																'desc' => gettext('Where do you want links to target?')
 												),
 												//zenFBComments Options
-												gettext_pl('Allow comments on') => array(
+												gettext('Allow comments on') => array(
 																'key' => 'zenFBComments_allowed',
 																'type' => OPTION_TYPE_CHECKBOX_ARRAY,
 																'checkboxes' => $checkboxes,
 																'order' => 14,
-																'desc' => gettext_pl('Comment forms will be presented on the checked pages.')
+																'desc' => gettext('Comment forms will be presented on the checked pages.')
 												),
-												gettext_pl('Number Of Posts') => array(
+												gettext('Number Of Posts') => array(
 																'key' => 'zenFBComments_numofposts',
 																'type' => 0,
 																'order' => 15,
-																'desc' => gettext_pl('Number of posts to display. Defaults to 10. (numbers only)')
+																'desc' => gettext('Number of posts to display. Defaults to 10. (numbers only)')
 												),
-												gettext_pl('Width') => array(
+												gettext('Width') => array(
 																'key' => 'zenFBComments_width',
 																'type' => 0,
 																'order' => 16,
-																'desc' => gettext_pl('Width to display like button & options. Defaults to 450 pixels. (numbers only)')
+																'desc' => gettext('Width to display like button & options. Defaults to 450 pixels. (numbers only)')
 												),
-												gettext_pl('Color Scheme') => array(
+												gettext('Color Scheme') => array(
 																'key' => 'zenFBComments_colorscheme',
 																'type' => 5,
 																'order' => 17,
 																'selections' => array(
-																				gettext_pl('Light') => 0,
-																				gettext_pl('Dark') => 1
+																				gettext('Light') => 0,
+																				gettext('Dark') => 1
 																),
-																'desc' => gettext_pl('Choose which style to use.')
+																'desc' => gettext('Choose which style to use.')
 												),
 												//zenFBLike Options
-												gettext_pl('Layout Style') => array(
+												gettext('Layout Style') => array(
 																'key' => 'zenFBLike_layoutstyle',
 																'type' => 5,
 																'order' => 18,
 																'selections' => array(
-																				gettext_pl('Standard') => 0,
-																				gettext_pl('Simple Button Count') => 1,
-																				gettext_pl('Box Count') => 2
+																				gettext('Standard') => 0,
+																				gettext('Simple Button Count') => 1,
+																				gettext('Box Count') => 2
 																),
-																'desc' => gettext_pl('Determine the layout of social context next to the button.')
+																'desc' => gettext('Determine the layout of social context next to the button.')
 												),
-												gettext_pl('Show Faces?') => array(
+												gettext('Show Faces?') => array(
 																'key' => 'zenFBLike_showfaces',
 																'type' => 5,
 																'order' => 19,
 																'selections' => array(
-																				gettext_pl('Yes') => 0,
-																				gettext_pl('No') => 1
+																				gettext('Yes') => 0,
+																				gettext('No') => 1
 																				
 																),
-																'desc' => gettext_pl('Do you want to show profile pictures below the button of people who have clicked like?')
+																'desc' => gettext('Do you want to show profile pictures below the button of people who have clicked like?')
 												),
-												gettext_pl('Verbage') => array(
+												gettext('Verbage') => array(
 																'key' => 'zenFBLike_verbage',
 																'type' => 5,
 																'order' => 20,
 																'selections' => array(
-																				gettext_pl('Like') => 0,
-																				gettext_pl('Recommend') => 1
+																				gettext('Like') => 0,
+																				gettext('Recommend') => 1
 																),
-																'desc' => gettext_pl('Do you want to use "Like" or "Recommend"?')
+																'desc' => gettext('Do you want to use "Like" or "Recommend"?')
 												),
-												gettext_pl('Font') => array(
+												gettext('Font') => array(
 																'key' => 'zenFBLike_font',
 																'type' => 5,
 																'order' => 21,
 																'selections' => array(
-																				gettext_pl('Default') => 0,
-																				gettext_pl('Arial') => 1,
-																				gettext_pl('Lucida Grande') => 2,
-																				gettext_pl('Segoe UI') => 3,
-																				gettext_pl('Tahoma') => 4,
-																				gettext_pl('Trebuche MS') => 5,
-																				gettext_pl('Verdana') => 6
+																				gettext('Default') => 0,
+																				gettext('Arial') => 1,
+																				gettext('Lucida Grande') => 2,
+																				gettext('Segoe UI') => 3,
+																				gettext('Tahoma') => 4,
+																				gettext('Trebuche MS') => 5,
+																				gettext('Verdana') => 6
 																),
-																'desc' => gettext_pl('Which font do you want to use?')
+																'desc' => gettext('Which font do you want to use?')
 												),
-												gettext_pl('Color Scheme') => array(
+												gettext('Color Scheme') => array(
 																'key' => 'zenFBLike_scheme',
 																'type' => 5,
 																'order' => 22,
 																'selections' => array(
-																				gettext_pl('Light') => 0,
-																				gettext_pl('Dark') => 1
+																				gettext('Light') => 0,
+																				gettext('Dark') => 1
 																),
-																'desc' => gettext_pl('Simple Light or Dark color scheme selection.')
+																'desc' => gettext('Simple Light or Dark color scheme selection.')
 												),
-												gettext_pl('Width') => array(
+												gettext('Width') => array(
 																'key' => 'zenFBLike_width',
 																'type' => 0,
 																'order' => 23,
-																'desc' => gettext_pl('Width to display like button & options. Defaults to 450 pixels. (numbers only)')
+																'desc' => gettext('Width to display like button & options. Defaults to 450 pixels. (numbers only)')
 												),
-												gettext_pl('Include Send Button') => array(
+												gettext('Include Send Button') => array(
 																'key' => 'zenFBLike_sendbutton',
 																'type' => 5,
 																'order' => 24,
 																'selections' => array(
-																				gettext_pl('Yes') => 0,
-																				gettext_pl('No') => 1
+																				gettext('Yes') => 0,
+																				gettext('No') => 1
 																				
 																),
-																'desc' => gettext_pl('Do you want to include a send button next to the like button?')
+																'desc' => gettext('Do you want to include a send button next to the like button?')
 												),
-												gettext_pl('Hide Header?') => array(
+												gettext('Hide Header?') => array(
 																'key' => 'zenFBRecommend_showheader',
 																'type' => 5,
 																'order' => 26,
 																'selections' => array(
-																				gettext_pl('No') => 0,
-																				gettext_pl('Yes') => 1
+																				gettext('No') => 0,
+																				gettext('Yes') => 1
 																),
-																'desc' => gettext_pl('Do you want to hide the "Recommendations" header in your box?')
+																'desc' => gettext('Do you want to hide the "Recommendations" header in your box?')
 												),
-												gettext_pl('Font') => array(
+												gettext('Font') => array(
 																'key' => 'zenFBRecommend_font',
 																'type' => 5,
 																'order' => 27,
 																'selections' => array(
-																				gettext_pl('Default') => 0,
-																				gettext_pl('Arial') => 1,
-																				gettext_pl('Lucida Grande') => 2,
-																				gettext_pl('Segoe UI') => 3,
-																				gettext_pl('Tahoma') => 4,
-																				gettext_pl('Trebuche MS') => 5,
-																				gettext_pl('Verdana') => 6
+																				gettext('Default') => 0,
+																				gettext('Arial') => 1,
+																				gettext('Lucida Grande') => 2,
+																				gettext('Segoe UI') => 3,
+																				gettext('Tahoma') => 4,
+																				gettext('Trebuche MS') => 5,
+																				gettext('Verdana') => 6
 																),
-																'desc' => gettext_pl('Which font do you want to use?')
+																'desc' => gettext('Which font do you want to use?')
 												),
-												gettext_pl('Color Scheme') => array(
+												gettext('Color Scheme') => array(
 																'key' => 'zenFBRecommend_scheme',
 																'type' => 5,
 																'order' => 28,
 																'selections' => array(
-																				gettext_pl('Light') => 0,
-																				gettext_pl('Dark') => 1
+																				gettext('Light') => 0,
+																				gettext('Dark') => 1
 																),
-																'desc' => gettext_pl('Simple Light or Dark color scheme selection.')
+																'desc' => gettext('Simple Light or Dark color scheme selection.')
 												),
-												gettext_pl('Width') => array(
+												gettext('Width') => array(
 																'key' => 'zenFBRecommend_width',
 																'type' => 0,
 																'order' => 29,
-																'desc' => gettext_pl('Width to display recommend box. Defaults to 300 pixels. (numbers only)')
+																'desc' => gettext('Width to display recommend box. Defaults to 300 pixels. (numbers only)')
 												),
-												gettext_pl('Height') => array(
+												gettext('Height') => array(
 																'key' => 'zenFBRecommend_height',
 																'type' => 0,
 																'order' => 30,
-																'desc' => gettext_pl('Height to display recommend box. Defaults to 300 pixels. (numbers only)')
+																'desc' => gettext('Height to display recommend box. Defaults to 300 pixels. (numbers only)')
 												),
-												gettext_pl('Border Color') => array(
+												gettext('Border Color') => array(
 																'key' => 'zenFBRecommend_bordercolor',
 																'type' => 0,
 																'order' => 31,
-																'desc' => gettext_pl('What color do you want the border to be? Can be RGB hastags (#FF33FF) or Color Words (white, pink, black, gray, etc).')
+																'desc' => gettext('What color do you want the border to be? Can be RGB hastags (#FF33FF) or Color Words (white, pink, black, gray, etc).')
 												),												
-												gettext_pl('Link Target') => array(
+												gettext('Link Target') => array(
 																'key' => 'zenFBRecommend_linktarget',
 																'type' => 5,
 																'order' => 32,
 																'selections' => array(
-																				gettext_pl('_blank') => 0,
-																				gettext_pl('_top') => 1,
-																				gettext_pl('_parent') => 2,
+																				gettext('_blank') => 0,
+																				gettext('_top') => 1,
+																				gettext('_parent') => 2,
 																),
-																'desc' => gettext_pl('Where do you want links to target?')
+																'desc' => gettext('Where do you want links to target?')
 												)
 								);
 								
@@ -567,8 +567,8 @@ function zenFBActivity() {
 				$scheme     = getOption('zenFBActivity_scheme');
 				$target		= getOption('zenFBActivity_linktarget');
 				$bordercolr	= getOption('zenFBActivity_bordercolor');				
-				$width      = gettext_pl(getOption('zenFBActivity_width'));
-				$height     = gettext_pl(getOption('zenFBActivity_height'));
+				$width      = gettext(getOption('zenFBActivity_width'));
+				$height     = gettext(getOption('zenFBActivity_height'));
 				$domain     = $_SERVER['HTTP_HOST'];
 				
 				
@@ -659,8 +659,8 @@ function zenFBComments() {
 												break;
 				}
 				// Set variables
-				$numofposts = gettext_pl(getOption('zenFBComments_numofposts'));
-				$width      = gettext_pl(getOption('zenFBComments_width'));
+				$numofposts = gettext(getOption('zenFBComments_numofposts'));
+				$width      = gettext(getOption('zenFBComments_width'));
 				$scheme     = getOption('zenFBComments_colorscheme');
 				$migrate    = getOption('zenFBComments_migrate');
 				if (!isset($_SERVER['HTTPS'])) {
@@ -698,7 +698,7 @@ function zenFBLike() {
 				$verb   = getOption('zenFBLike_verbage');
 				$font   = getOption('zenFBLike_font');
 				$scheme = getOption('zenFBLike_scheme');
-				$width  = gettext_pl(getOption('zenFBLike_width'));
+				$width  = gettext(getOption('zenFBLike_width'));
 				if (!isset($_SERVER['HTTPS'])) {
 				$url    = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 				} else { 
@@ -768,8 +768,8 @@ function zenFBRecommend() {
 				$scheme     = getOption('zenFBRecommend_scheme');
 				$target		= getOption('zenFBRecommend_linktarget');
 				$bordercolr	= getOption('zenFBRecommend_bordercolor');				
-				$width      = gettext_pl(getOption('zenFBRecommend_width'));
-				$height     = gettext_pl(getOption('zenFBRecommend_height'));
+				$width      = gettext(getOption('zenFBRecommend_width'));
+				$height     = gettext(getOption('zenFBRecommend_height'));
 				$domain    = $_SERVER['HTTP_HOST'];
 				
 				// Output XFBML
