@@ -8,11 +8,11 @@ Code Implementation - Micheal Luttrull (micheall)
 
 Installation
 ============
-To install zenFBSuite to your Zenphoto, simply uploade the zenFBSuite.php to your $zenphotodir/plugins - Please note that $zenphotodir represents where your zenphoto is installed to.<br />
+<ol><li>To install zenFBSuite to your Zenphoto, simply uploade the zenFBSuite.php to your $zenphotodir/plugins - Please note that $zenphotodir represents where your zenphoto is installed to.<br /></li>
 <br />
-Once uploaded, enable and enter your plugin options via the administration backend.<br />
+<li>Once uploaded, enable and enter your plugin options via the administration backend.<br /></li>
 <br />
-The final step is where your creativty is required. The zenFBSuite is a host of template calls that will add the Facebook social plugins to your website. You call them by editting your theme files and inserting the appropriate calls. Below are the listing of calls and which functions they provide.<br />
+<li>The final step is where your creativty is required. The zenFBSuite is a host of template calls that will add the Facebook social plugins to your website. You call them by editting your theme files and inserting the appropriate calls. Below are the listing of calls and which functions they provide.<br /></li></ol>
 <br />
 <em><?php if (function_exists('zenFBActivity')) { zenFBActivity(); } ?></em><br />
 <br />
