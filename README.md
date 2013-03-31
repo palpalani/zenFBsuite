@@ -2,7 +2,7 @@ zenFBsuite
 ==========
 This plugin is a combination of many of the Facebook social plugins implemented for easy use
 in your Zenphoto gallery. Simply set the options in the admin interface and make the appropriate
-template changes to place the Facebook features/integration you'd like.
+template changes to place the Facebook features/integration you'd like. This plugin also creates all the proper Open Graph meta tags so that your site "looks pretty" when seen on Facebook wall posts, etc.
 
 Code Implementation - Micheal Luttrull (micheall)
 
