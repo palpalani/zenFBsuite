@@ -35,6 +35,10 @@ The zenFBRecommend template call adds the Facebook Recommendations box. This is 
 The zenFBSend template call adds a simple Facebook Send button which allows a user (via Facebook) to send to other user or email an email someone a link to the page in question.<br />
 <br />
 
+Upgrade Note
+============
+In order to upgrade from previous versions of the plugin, you must first remove all previous files (zenfbcommon.php, zenfblike.php, etc). This is required as the suite has been combined into one plugin file. Failure to remove old versions will result in php redeclare errors.
+
 Developer Note
 ==============
 The zenFBSuite requires you to create a Facebook Application for your app_id. Without doing so, this
