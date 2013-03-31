@@ -50,5 +50,5 @@ http://inthemdl.net/news/creating-your-facebook-app_id
 
 Demonstration
 =============
-To see these plugins on a demonstration page, please either peruse this site, or visit this link.
+To see these plugins on a demonstration page, please either peruse this site, or visit <a href="http://inthemdl.net/pages/zenfbdemo">this link</a>.
 
